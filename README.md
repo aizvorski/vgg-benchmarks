@@ -11,24 +11,26 @@ Here are the results on a GTX 1080 with a minibatch size of 16.
 | Framework  | Time (forward+backward)  |
 |:---|:---|
 | Caffe  | 151.733 ms  |
-| Keras (Theano)  | 539.042 ms  |
-| Keras (Tensorflow)  | 776.792 ms  |
+| Keras (Tensorflow)  | 287.693 ms  |
+| Keras (Theano)  | 409.953 ms  |
 
-For comparison, https://github.com/jcjohnson/cnn-benchmarks lists VGG-16 on the GTX 1080 as taking 232.55 ms (Torch, cuDNN 5, minibatch size 16). The Caffe timing is surprisingly fast compared to Torch.
+For comparison, https://github.com/jcjohnson/cnn-benchmarks lists Torch as taking 232.55 ms (identical setup, VGG16, GTX 1080, CUDA 8, cuDNN 5, minibatch size 16). The Caffe timing is surprisingly fast compared to Torch.
 
 ## Running
 
+Caffe should be built inside caffe/ in the current directory (or a symlink)
+
 ```bash
-python benchmark_caffe.py > results/benchmark_caffe.output
-python benchmark_keras.py > results/benchmark_keras.output
-KERAS_BACKEND=tensorflow python benchmark_keras.py > results/benchmark_keras.tensorflow.output
+run.sh
 ```
+
+Note: this will back up and then restore your ~/.keras/keras.json
 
 ## Environment
 
 The environment for the results listed above is as follows:
 
-- Hardware: GTX 1080 (Founders Edition)
+- Hardware: GTX 1080 (EVGA GTX 1080 Founders Edition)
 - CUDA: 8.0 (cuda-repo-ubuntu1404-8-0-rc_8.0.27-1_amd64.deb)
 - CuDNN: 5.0 (cudnn-8.0-linux-x64-v5.0-ga.tgz)
 - Caffe: df412ac (from source)

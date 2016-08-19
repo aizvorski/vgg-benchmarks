@@ -1,73 +1,41 @@
+import argparse
+import os.path
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--backend")
+args = parser.parse_args()
+
+with open(os.path.expanduser("~/.keras/keras.json"), "w") as fh:
+    if args.backend == "theano":
+        fh.write('{ "image_dim_ordering": "th", "epsilon": 1e-07, "floatx": "float32", "backend": "theano" }')
+    elif args.backend == "tensorflow":
+        fh.write('{ "image_dim_ordering": "tf", "epsilon": 1e-07, "floatx": "float32", "backend": "tensorflow" }')
+    else:
+        print "Backend must be theano or tensorflow"
+
 import numpy as np
 import time
-
-import keras
-print "Keras " + str(keras.__version__)
-
-import theano
-print "Theano " + str(theano.__version__)
-
-from keras.models import Sequential
-from keras.layers.core import Flatten, Dense, Dropout
-from keras.layers.convolutional import Convolution2D, MaxPooling2D, ZeroPadding2D
+import sys
 from keras.optimizers import SGD
+
+# vgg16.py from https://github.com/fchollet/deep-learning-models
+sys.path.append("deep-learning-models")
+import vgg16
 
 width = 224
 height = 224
 batch_size = 16
 
-def make_model():
-    model = Sequential()
-    model.add(ZeroPadding2D((1,1),input_shape=(3,224,224)))
-    model.add(Convolution2D(64, 3, 3, activation='relu'))
-    model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(64, 3, 3, activation='relu'))
-    model.add(MaxPooling2D((2,2), strides=(2,2)))
-
-    model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(128, 3, 3, activation='relu'))
-    model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(128, 3, 3, activation='relu'))
-    model.add(MaxPooling2D((2,2), strides=(2,2)))
-
-    model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(256, 3, 3, activation='relu'))
-    model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(256, 3, 3, activation='relu'))
-    model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(256, 3, 3, activation='relu'))
-    model.add(MaxPooling2D((2,2), strides=(2,2)))
-
-    model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(512, 3, 3, activation='relu'))
-    model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(512, 3, 3, activation='relu'))
-    model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(512, 3, 3, activation='relu'))
-    model.add(MaxPooling2D((2,2), strides=(2,2)))
-
-    model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(512, 3, 3, activation='relu'))
-    model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(512, 3, 3, activation='relu'))
-    model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(512, 3, 3, activation='relu'))
-    model.add(MaxPooling2D((2,2), strides=(2,2)))
-
-    model.add(Flatten())
-    model.add(Dense(4096, activation='relu'))
-    model.add(Dropout(0.5))
-    model.add(Dense(4096, activation='relu'))
-    model.add(Dropout(0.5))
-    model.add(Dense(1000, activation='softmax'))
-
-    return model
-
-model = make_model()
+model = vgg16.VGG16(include_top=True, weights=None)
 sgd = SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd) # loss='hinge'
 
-x = np.zeros((batch_size, 3, width, height), dtype=np.float32)
+if args.backend == "theano":
+    x = np.zeros((batch_size, 3, width, height), dtype=np.float32)
+elif args.backend == "tensorflow":
+    x = np.zeros((batch_size, width, height, 3), dtype=np.float32)
+else:
+    print "Backend must be theano or tensorflow"
 y = np.zeros((batch_size, 1000), dtype=np.float32)
 
 # warmup
