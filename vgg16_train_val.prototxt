@@ -2,45 +2,35 @@
 name: "VGG_ILSVRC_16_layers"
 layers {
   name: "data"
-  type: DATA
+  type: IMAGE_DATA
+  top: "data"
+  top: "label"
   include {
     phase: TRAIN
   }
- transform_param {
+  transform_param {
     crop_size: 224
-    mean_value: 104
-    mean_value: 117
-    mean_value: 123
-    mirror: true
- }
- data_param {
-    source: "data/ilsvrc12/ilsvrc12_train_lmdb"
-    batch_size: 64
-    backend: LMDB
   }
-  top: "data"
-  top: "label"
+  image_data_param {
+    source: "images/list.txt"
+    batch_size: 16
+  }
 }
 layers {
   name: "data"
-  type: DATA
+  type: IMAGE_DATA
+  top: "data"
+  top: "label"
   include {
     phase: TEST
   }
- transform_param {
+  transform_param {
     crop_size: 224
-    mean_value: 104
-    mean_value: 117
-    mean_value: 123
-    mirror: false
- }
- data_param {
-    source: "data/ilsvrc12/ilsvrc12_val_lmdb"
-    batch_size: 50
-    backend: LMDB
   }
-  top: "data"
-  top: "label"
+  image_data_param {
+    source: "images/list.txt"
+    batch_size: 16
+  }
 }
 layers {
   bottom: "data"
@@ -52,8 +42,8 @@ layers {
     pad: 1
     kernel_size: 3
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   bottom: "conv1_1"
@@ -71,8 +61,8 @@ layers {
     pad: 1
     kernel_size: 3
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   bottom: "conv1_2"
@@ -101,8 +91,8 @@ layers {
     pad: 1
     kernel_size: 3
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   bottom: "conv2_1"
@@ -120,8 +110,8 @@ layers {
     pad: 1
     kernel_size: 3
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   bottom: "conv2_2"
@@ -150,8 +140,8 @@ layers {
     pad: 1
     kernel_size: 3
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   bottom: "conv3_1"
@@ -169,8 +159,8 @@ layers {
     pad: 1
     kernel_size: 3
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   bottom: "conv3_2"
@@ -188,8 +178,8 @@ layers {
     pad: 1
     kernel_size: 3
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   bottom: "conv3_3"
@@ -218,8 +208,8 @@ layers {
     pad: 1
     kernel_size: 3
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   bottom: "conv4_1"
@@ -237,8 +227,8 @@ layers {
     pad: 1
     kernel_size: 3
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   bottom: "conv4_2"
@@ -256,8 +246,8 @@ layers {
     pad: 1
     kernel_size: 3
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   bottom: "conv4_3"
@@ -286,8 +276,8 @@ layers {
     pad: 1
     kernel_size: 3
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   bottom: "conv5_1"
@@ -305,8 +295,8 @@ layers {
     pad: 1
     kernel_size: 3
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   bottom: "conv5_2"
@@ -324,8 +314,8 @@ layers {
     pad: 1
     kernel_size: 3
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   bottom: "conv5_3"
@@ -352,8 +342,8 @@ layers {
   inner_product_param {
     num_output: 4096
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   bottom: "fc6"
@@ -378,8 +368,8 @@ layers {
   inner_product_param {
     num_output: 4096
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   bottom: "fc7"
@@ -404,8 +394,8 @@ layers {
   inner_product_param {
     num_output: 1000
   }
-  blobs_lr: 0
-  blobs_lr: 0
+  blobs_lr: 0.001
+  blobs_lr: 0.001
 }
 layers {
   name: "loss"

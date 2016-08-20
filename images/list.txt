@@ -1,0 +1,16 @@
+images/img0000.tiff 0
+images/img0001.tiff 0
+images/img0002.tiff 0
+images/img0003.tiff 0
+images/img0004.tiff 0
+images/img0005.tiff 0
+images/img0006.tiff 0
+images/img0007.tiff 0
+images/img0008.tiff 0
+images/img0009.tiff 0
+images/img0010.tiff 0
+images/img0011.tiff 0
+images/img0012.tiff 0
+images/img0013.tiff 0
+images/img0014.tiff 0
+images/img0015.tiff 0

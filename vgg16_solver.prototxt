@@ -1,0 +1,14 @@
+net: "vgg16_train_val.prototxt"
+test_iter: 1
+test_interval: 1000
+base_lr: 0.002
+stepsize: 50000
+lr_policy: "step"
+gamma: 0.1
+display: 1
+max_iter: 100
+momentum: 0.9
+weight_decay: 0.0005
+snapshot: 1000
+snapshot_prefix: "./"
+solver_mode: GPU
