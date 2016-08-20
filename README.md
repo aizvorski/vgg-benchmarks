@@ -10,11 +10,12 @@ Here are the results on a GTX 1080 with a minibatch size of 16.
 
 | Framework  | Time (forward+backward)  |
 |:---|:---|
-| Caffe  | 151.733 ms  |
+| Caffe  | 244.445 ms  |
+| Torch (1)  | 232.55 ms  |
 | Keras (Tensorflow)  | 287.693 ms  |
 | Keras (Theano)  | 409.953 ms  |
 
-For comparison, https://github.com/jcjohnson/cnn-benchmarks lists Torch as taking 232.55 ms (identical setup, VGG16, GTX 1080, CUDA 8, cuDNN 5, minibatch size 16). The Caffe timing is surprisingly fast compared to Torch.
+(1) The Torch benchmark is from https://github.com/jcjohnson/cnn-benchmarks (it has an essentially identical setup, VGG16, GTX 1080, CUDA 8, cuDNN 5, minibatch size 16).
 
 ## Running
 
