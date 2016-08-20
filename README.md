@@ -1,21 +1,21 @@
-# Benchmark: Caffe vs Keras
+# Simple Deep Learning Benchmark (VGG16)
 
-This mini-benchmark compares the speed of Caffe vs Keras (using Theano) and Keras (using Tensorflow). 
-
-It uses the VGG-16 network architecture.
+This mini-benchmark compares the speed of several deep learning frameworks on the VGG-16 network architecture.
 
 ## Results
 
 Here are the results on a GTX 1080 with a minibatch size of 16.
 
-| Framework  | Time (forward+backward)  |
+| Framework  | Time (per minibatch)  |
 |:---|:---|
-| Caffe  | 244.445 ms  |
 | Torch (1)  | 232.55 ms  |
+| Caffe  | 244.445 ms  |
 | Keras (Tensorflow)  | 287.693 ms  |
 | Keras (Theano)  | 409.953 ms  |
 
-(1) The Torch benchmark is from https://github.com/jcjohnson/cnn-benchmarks (it has an essentially identical setup, VGG16, GTX 1080, CUDA 8, cuDNN 5, minibatch size 16).
+(1) The Torch benchmark is from https://github.com/jcjohnson/cnn-benchmarks (it has an essentially identical setup, VGG-16, GTX 1080, CUDA 8, cuDNN 5, minibatch size 16).
+
+(2) The time is for a complete SGD step including parameter updates, not just the forward+backward time.
 
 ## Running
 
