@@ -8,6 +8,7 @@ Here are the results on a GTX 1080 with a minibatch size of 16.
 
 | Framework  | Time (per minibatch)  |
 |:---|:---|
+| Neon  | 164.527 ms  |
 | Torch (1)  | 232.55 ms  |
 | Caffe  | 244.445 ms  |
 | Keras (Tensorflow)  | 287.693 ms  |
@@ -38,6 +39,7 @@ The environment for the results listed above is as follows:
 - Keras: 1.0.7
 - Theano: 0.8.2
 - TensorFlow: 85f76f5 (from source)
+- Neon: 1.5.4 (485033c)
 - Python: 2.7.6
 - Ubuntu: 14.04.3 LTS
 
