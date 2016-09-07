@@ -9,6 +9,8 @@ fi
 
 python benchmark_caffe.py > results/benchmark_caffe.output
 
+PATH=/usr/local/cuda/bin/:$PATH python benchmark_neon.py > results/benchmark_neon.output
+
 mv ~/.keras/keras.json ~/.keras/keras.json.bak
 
 python benchmark_keras.py --backend theano     > results/benchmark_keras_theano.output
