@@ -2,6 +2,8 @@
 
 This mini-benchmark compares the speed of several deep learning frameworks on the VGG-16 network architecture.
 
+*Contributions welcome!*
+
 ## Results
 
 Here are the results on a GTX 1080 with a minibatch size of 16.
