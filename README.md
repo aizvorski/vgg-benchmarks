@@ -43,7 +43,7 @@ The mini batch size is 16. As the speed changed with GPU heat, the fan speed was
 | Torch (1) | 273.542 ms  |
 | Caffe  | 311.061 ms |
 | Keras (Tensorflow)  | 360.753 ms  |
-| Keras (Theano)  | 317.298 ms ms  |
+| Keras (Theano)  | 317.298 ms  |
 
 (1) The code in https://github.com/jcjohnson/cnn-benchmarks was re-run with 100 iterations, 100 % GPU fan and starting temperature of 45.
 
