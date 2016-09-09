@@ -39,7 +39,7 @@ The mini batch size is 16. As the speed changed with GPU heat, the fan speed was
 
 | Framework  | Time (per minibatch)  |
 |:---|:---|
-| Neon  | TBD  |
+| Neon  | 207.406 ms  |
 | Torch (1) | 273.542 ms  |
 | Caffe  | 311.061 ms |
 | Keras (Tensorflow)  | 360.753 ms  |
