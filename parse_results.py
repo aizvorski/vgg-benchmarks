@@ -10,7 +10,7 @@ def parse_output(output_file):
         for line in list_lines:
             if "Time per iteration" in line:
                 result = line.split(" ")[-2]
-                return result
+                return float(result)
 
 
 def parse_output_caffe(output_file):
@@ -39,9 +39,28 @@ def parse_output_caffe(output_file):
 
     return 1E-3 * np.mean(arr_delta)
 
-if __name__ == '__main__':
 
-    print parse_output_caffe("benchmark_caffe.output")
-    print parse_output("benchmark_keras_theano.output")
-    print parse_output("benchmark_keras_tensorflow.output")
-    print parse_output("benchmark_neon.output")
+def name_to_path(name):
+    return name.lower().replace('(', '').replace(')', '').replace(' ', '_')
+
+
+if __name__ == '__main__':
+    benchmark_names = ('Neon', 'Caffe', 'Keras (TensorFlow)', 'Keras (Theano)')
+    run_names = ('GTX 1080', 'Maxwell Titan X')
+
+    line = "| Framework | "
+    for run_name in run_names:
+        line += run_name + " | "
+    print line
+
+    for name in benchmark_names:
+        line = "| " + name + " | "
+        for run_name in run_names:
+            result_path = name_to_path(run_name)+"/benchmark_"+name_to_path(name)+".output"
+            if name == 'Caffe':
+                time_ = parse_output_caffe(result_path)
+            else:
+                time_ = parse_output(result_path)
+            line += "%.2f" % ( time_ )
+            line += " | "
+        print line
