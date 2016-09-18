@@ -12,7 +12,7 @@ The mini batch size is 16
 |:---|:---|
 | Neon  | 164.527 ms  |
 | Torch (1)  | 232.55 ms  |
-| Caffe  | 244.445 ms  |
+| Caffe (2)  | 244.445 ms  |
 | Keras (Tensorflow)  | 287.693 ms  |
 | Keras (Theano)  | 409.953 ms  |
 
@@ -43,13 +43,17 @@ The mini batch size is 16. As the speed changed with GPU heat, the fan speed was
 |:---|:---|
 | Neon  | 207.406 ms  |
 | Torch (1) | 273.542 ms  |
-| Caffe  | 311.061 ms |
+| Caffe (2)  | 311.061 ms |
 | Keras (Tensorflow)  | 360.753 ms  |
 | Keras (Theano)  | 317.298 ms  |
+| Tensorflow  | 332.27 ms  |
+| Tensorflow (slim) (3) | 370.89 ms  |
 
 (1) The code in https://github.com/jcjohnson/cnn-benchmarks was re-run with 100 iterations, 100 % GPU fan and starting temperature of 45.
 
 (2) The time is for a complete SGD step including parameter updates, not just the forward+backward time.
+
+(3) Uses the built-in slim training function, which has possibly more overhead.
 
 - Hardware: Titan X Maxwell
 - CUDA: 8.0 (cuda-repo-ubuntu1404-8-0-rc_8.0.27-1_amd64.deb)
