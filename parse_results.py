@@ -3,7 +3,7 @@ import numpy as np
 
 
 def parse_output(output_file):
-    """ Utility to parse the output of keras and neon"""
+    """ Utility to parse the output of keras, neon and tensorflow"""
 
     with open("./results/%s" % output_file, "r") as f:
         list_lines = f.readlines()
@@ -45,7 +45,8 @@ def name_to_path(name):
 
 
 if __name__ == '__main__':
-    benchmark_names = ('Neon', 'Caffe', 'Keras (TensorFlow)', 'Keras (Theano)')
+    benchmark_names = ('Neon', 'Caffe', 'Keras (TensorFlow)', 'Keras (Theano)',
+                       'Tensorflow', 'Tensorflow (slim)')
     run_names = ('GTX 1080', 'Maxwell Titan X')
 
     line = "| Framework | "
@@ -56,11 +57,11 @@ if __name__ == '__main__':
     for name in benchmark_names:
         line = "| " + name + " | "
         for run_name in run_names:
-            result_path = name_to_path(run_name)+"/benchmark_"+name_to_path(name)+".output"
+            result_path = name_to_path(run_name) + "/benchmark_" + name_to_path(name) + ".output"
             if name == 'Caffe':
                 time_ = parse_output_caffe(result_path)
             else:
                 time_ = parse_output(result_path)
-            line += "%.2f" % ( time_ )
+            line += "%.2f" % (time_)
             line += " | "
         print line
