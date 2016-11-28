@@ -9,6 +9,8 @@ fi
 
 python benchmark_caffe.py > results/benchmark_caffe.output
 
+python benchmark_mxnet.py > results/benchmark_mxnet.output
+
 PATH=/usr/local/cuda/bin/:$PATH python benchmark_neon.py > results/benchmark_neon.output
 
 python benchmark_tensorflow.py --train_schedule pure_tf > results/benchmark_tensorflow.output

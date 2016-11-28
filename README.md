@@ -48,6 +48,7 @@ The mini batch size is 16. As the speed changed with GPU heat, the fan speed was
 | Keras (Theano)  | 317.298 ms  |
 | Tensorflow  | 332.27 ms  |
 | Tensorflow (slim) (3) | 370.89 ms  |
+| mxnet | 324.635 ms |
 
 (1) The code in https://github.com/jcjohnson/cnn-benchmarks was re-run with 100 iterations, 100 % GPU fan and starting temperature of 45.
 
@@ -63,6 +64,7 @@ The mini batch size is 16. As the speed changed with GPU heat, the fan speed was
 - Theano: 0.9.0dev2.dev-338384adeabd2a56ccae22a9f1105a9f82ce9b8f
 - TensorFlow:  2a6d751 (from source)
 - Neon: 1.5.4 (485033c)
+- mxnet: (066373a) from source
 - Python: 2.7.6
 - Ubuntu: 14.04.3 LTS
 
