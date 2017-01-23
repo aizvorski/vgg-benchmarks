@@ -7,21 +7,33 @@ else
    git clone https://github.com/fchollet/deep-learning-models
 fi
 
-python benchmark_caffe.py > results/benchmark_caffe.output
+nvidia-smi dmon > results/benchmark_caffe.dmon 2>&1 &
+python benchmark_caffe.py > results/benchmark_caffe.output 2>&1
+killall -9 nvidia-smi
 
-python benchmark_mxnet.py > results/benchmark_mxnet.output
+nvidia-smi dmon > results/benchmark_mxnet.dmon 2>&1 &
+python benchmark_mxnet.py > results/benchmark_mxnet.output 2>&1
+killall -9 nvidia-smi
 
-PATH=/usr/local/cuda/bin/:$PATH python benchmark_neon.py > results/benchmark_neon.output
+# PATH=/usr/local/cuda/bin/:$PATH python benchmark_neon.py > results/benchmark_neon.output
 
-python benchmark_tensorflow.py --train_schedule pure_tf > results/benchmark_tensorflow.output
+nvidia-smi dmon > results/benchmark_tensorflow.dmon 2>&1 &
+python benchmark_tensorflow.py --train_schedule pure_tf > results/benchmark_tensorflow.output 2>&1
+killall -9 nvidia-smi
 
-python benchmark_tensorflow.py --train_schedule slim > results/benchmark_tensorflow_slim.output
+nvidia-smi dmon > results/benchmark_tensorflow_slim.dmon 2>&1 &
+python benchmark_tensorflow.py --train_schedule slim > results/benchmark_tensorflow_slim.output 2>&1
+killall -9 nvidia-smi
 
 mv ~/.keras/keras.json ~/.keras/keras.json.bak
 
-python benchmark_keras.py --backend theano     > results/benchmark_keras_theano.output
+nvidia-smi dmon > results/benchmark_keras_theano.dmon 2>&1 &
+python benchmark_keras.py --backend theano     > results/benchmark_keras_theano.output 2>&1
+killall -9 nvidia-smi
 
-python benchmark_keras.py --backend tensorflow > results/benchmark_keras_tensorflow.output
+nvidia-smi dmon > results/benchmark_keras_tensorflow.dmon 2>&1 &
+python benchmark_keras.py --backend tensorflow > results/benchmark_keras_tensorflow.output 2>&1
+killall -9 nvidia-smi
 
 mv ~/.keras/keras.json.bak ~/.keras/keras.json
 
