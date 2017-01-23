@@ -1,0 +1,18 @@
+Epoch 0   [Train |████████████████████|    1/1    batches, 6.91 cost, 130.02s]
+                                                                              Epoch 1   [Train |████████████████████|    1/1    batches, 6.91 cost, 130.25s]
+                                                                              Epoch 2   [Train |████████████████████|    1/1    batches, 6.91 cost, 129.64s]
+                                                                              Epoch 3   [Train |████████████████████|    1/1    batches, 6.91 cost, 129.35s]
+                                                                              Epoch 4   [Train |████████████████████|    1/1    batches, 6.91 cost, 129.55s]
+                                                                              Epoch 5   [Train |████████████████████|    1/1    batches, 6.91 cost, 129.53s]
+                                                                              Epoch 6   [Train |████████████████████|    1/1    batches, 6.91 cost, 129.70s]
+                                                                              Epoch 7   [Train |████████████████████|    1/1    batches, 6.91 cost, 129.68s]
+                                                                              Epoch 8   [Train |████████████████████|    1/1    batches, 6.90 cost, 129.45s]
+                                                                              Epoch 9   [Train |████████████████████|    1/1    batches, 6.90 cost, 129.41s]
+                                                                              Epoch 10  [Train |████████████████████|    1/1    batches, 6.90 cost, 129.48s]
+                                                                              Epoch 11  [Train |████████████████████|    1/1    batches, 6.90 cost, 129.21s]
+                                                                              Epoch 12  [Train |████████████████████|    1/1    batches, 6.90 cost, 129.64s]
+                                                                              Epoch 13  [Train |████████████████████|    1/1    batches, 6.90 cost, 129.41s]
+                                                                              Epoch 14  [Train |████████████████████|    1/1    batches, 6.90 cost, 129.79s]
+                                                                              Epoch 15  [Train |████████████████████|    1/1    batches, 6.90 cost, 129.61s]
+                                                                              Epoch 16  [Train |████████████████████|    1/1    batches, 6.90 cost, 129.91s]
+                                                                              Epoch 17  [Train |████████████████████|    1/1    batches, 6.90 cost, 129.72s]

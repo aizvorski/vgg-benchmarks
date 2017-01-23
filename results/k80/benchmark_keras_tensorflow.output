@@ -1,0 +1,119 @@
+Using TensorFlow backend.
+I tensorflow/stream_executor/dso_loader.cc:108] successfully opened CUDA library libcublas.so.7.5 locally
+I tensorflow/stream_executor/dso_loader.cc:108] successfully opened CUDA library libcudnn.so.5 locally
+I tensorflow/stream_executor/dso_loader.cc:108] successfully opened CUDA library libcufft.so.7.5 locally
+I tensorflow/stream_executor/dso_loader.cc:108] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:108] successfully opened CUDA library libcurand.so.7.5 locally
+I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:925] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+I tensorflow/core/common_runtime/gpu/gpu_init.cc:102] Found device 0 with properties: 
+name: Tesla K80
+major: 3 minor: 7 memoryClockRate (GHz) 0.8235
+pciBusID 0000:00:1e.0
+Total memory: 11.25GiB
+Free memory: 11.13GiB
+I tensorflow/core/common_runtime/gpu/gpu_init.cc:126] DMA: 0 
+I tensorflow/core/common_runtime/gpu/gpu_init.cc:136] 0:   Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:838] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0)
+Iteration: 0 train on batch time: 1017.236 ms.
+Iteration: 1 train on batch time: 1020.970 ms.
+Iteration: 2 train on batch time: 1018.325 ms.
+Iteration: 3 train on batch time: 1012.985 ms.
+Iteration: 4 train on batch time: 1020.162 ms.
+Iteration: 5 train on batch time: 1032.775 ms.
+Iteration: 6 train on batch time: 1014.535 ms.
+Iteration: 7 train on batch time: 1011.061 ms.
+Iteration: 8 train on batch time: 1105.583 ms.
+Iteration: 9 train on batch time: 1017.483 ms.
+Iteration: 10 train on batch time: 1018.831 ms.
+Iteration: 11 train on batch time: 1021.091 ms.
+Iteration: 12 train on batch time: 1026.713 ms.
+Iteration: 13 train on batch time: 1021.117 ms.
+Iteration: 14 train on batch time: 1013.455 ms.
+Iteration: 15 train on batch time: 1036.014 ms.
+Iteration: 16 train on batch time: 1023.874 ms.
+Iteration: 17 train on batch time: 1016.743 ms.
+Iteration: 18 train on batch time: 1019.208 ms.
+Iteration: 19 train on batch time: 1032.383 ms.
+Iteration: 20 train on batch time: 1016.591 ms.
+Iteration: 21 train on batch time: 1026.585 ms.
+Iteration: 22 train on batch time: 1039.200 ms.
+Iteration: 23 train on batch time: 1032.526 ms.
+Iteration: 24 train on batch time: 1026.185 ms.
+Iteration: 25 train on batch time: 1027.078 ms.
+Iteration: 26 train on batch time: 1026.375 ms.
+Iteration: 27 train on batch time: 1030.565 ms.
+Iteration: 28 train on batch time: 1023.217 ms.
+Iteration: 29 train on batch time: 1038.791 ms.
+Iteration: 30 train on batch time: 1051.703 ms.
+Iteration: 31 train on batch time: 1028.012 ms.
+Iteration: 32 train on batch time: 1026.479 ms.
+Iteration: 33 train on batch time: 1025.240 ms.
+Iteration: 34 train on batch time: 1028.033 ms.
+Iteration: 35 train on batch time: 1024.030 ms.
+Iteration: 36 train on batch time: 1031.428 ms.
+Iteration: 37 train on batch time: 1047.575 ms.
+Iteration: 38 train on batch time: 1025.456 ms.
+Iteration: 39 train on batch time: 1024.458 ms.
+Iteration: 40 train on batch time: 1036.066 ms.
+Iteration: 41 train on batch time: 1030.012 ms.
+Iteration: 42 train on batch time: 1023.693 ms.
+Iteration: 43 train on batch time: 1034.144 ms.
+Iteration: 44 train on batch time: 1037.713 ms.
+Iteration: 45 train on batch time: 1023.031 ms.
+Iteration: 46 train on batch time: 1013.374 ms.
+Iteration: 47 train on batch time: 1040.580 ms.
+Iteration: 48 train on batch time: 1022.442 ms.
+Iteration: 49 train on batch time: 1017.749 ms.
+Iteration: 50 train on batch time: 1014.432 ms.
+Iteration: 51 train on batch time: 1027.870 ms.
+Iteration: 52 train on batch time: 1013.653 ms.
+Iteration: 53 train on batch time: 1013.838 ms.
+Iteration: 54 train on batch time: 1029.386 ms.
+Iteration: 55 train on batch time: 1013.163 ms.
+Iteration: 56 train on batch time: 1007.933 ms.
+Iteration: 57 train on batch time: 1009.042 ms.
+Iteration: 58 train on batch time: 1030.207 ms.
+Iteration: 59 train on batch time: 1013.684 ms.
+Iteration: 60 train on batch time: 1012.273 ms.
+Iteration: 61 train on batch time: 1124.486 ms.
+Iteration: 62 train on batch time: 1010.607 ms.
+Iteration: 63 train on batch time: 1007.886 ms.
+Iteration: 64 train on batch time: 1008.700 ms.
+Iteration: 65 train on batch time: 1022.307 ms.
+Iteration: 66 train on batch time: 1010.578 ms.
+Iteration: 67 train on batch time: 1006.925 ms.
+Iteration: 68 train on batch time: 1011.284 ms.
+Iteration: 69 train on batch time: 1021.331 ms.
+Iteration: 70 train on batch time: 1006.844 ms.
+Iteration: 71 train on batch time: 1008.393 ms.
+Iteration: 72 train on batch time: 1009.937 ms.
+Iteration: 73 train on batch time: 1008.786 ms.
+Iteration: 74 train on batch time: 1005.366 ms.
+Iteration: 75 train on batch time: 1011.294 ms.
+Iteration: 76 train on batch time: 1016.031 ms.
+Iteration: 77 train on batch time: 1009.339 ms.
+Iteration: 78 train on batch time: 1010.431 ms.
+Iteration: 79 train on batch time: 1095.084 ms.
+Iteration: 80 train on batch time: 1014.021 ms.
+Iteration: 81 train on batch time: 1007.499 ms.
+Iteration: 82 train on batch time: 1014.144 ms.
+Iteration: 83 train on batch time: 1010.009 ms.
+Iteration: 84 train on batch time: 1006.829 ms.
+Iteration: 85 train on batch time: 1004.976 ms.
+Iteration: 86 train on batch time: 1031.637 ms.
+Iteration: 87 train on batch time: 1008.206 ms.
+Iteration: 88 train on batch time: 1002.442 ms.
+Iteration: 89 train on batch time: 1005.437 ms.
+Iteration: 90 train on batch time: 1016.133 ms.
+Iteration: 91 train on batch time: 1007.179 ms.
+Iteration: 92 train on batch time: 1004.678 ms.
+Iteration: 93 train on batch time: 1019.152 ms.
+Iteration: 94 train on batch time: 1010.556 ms.
+Iteration: 95 train on batch time: 1005.696 ms.
+Iteration: 96 train on batch time: 1006.815 ms.
+Iteration: 97 train on batch time: 1013.493 ms.
+Iteration: 98 train on batch time: 1011.643 ms.
+Iteration: 99 train on batch time: 1007.593 ms.
+Batch size: 16
+Iterations: 100
+Time per iteration: 1021.813 ms
