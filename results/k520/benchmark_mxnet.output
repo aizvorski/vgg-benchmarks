@@ -1,0 +1,6 @@
+[09:36:46] /home/ec2-user/src/mxnet/dmlc-core/include/dmlc/./logging.h:235: [09:36:46] src/storage/./pooled_storage_manager.h:79: cudaMalloc failed: out of memory
+[09:36:46] /home/ec2-user/src/mxnet/dmlc-core/include/dmlc/logging.h:235: [09:36:46] src/engine/./threaded_engine.h:306: [09:36:46] src/storage/./pooled_storage_manager.h:79: cudaMalloc failed: out of memory
+An fatal error occurred in asynchronous engine operation. If you do not know what caused this error, you can try set environment variable MXNET_ENGINE_TYPE to NaiveEngine and run with debugger (i.e. gdb). This will force all operations to be synchronous and backtrace will give you the series of calls that lead to this error. Remember to set MXNET_ENGINE_TYPE back to empty after debugging.
+terminate called after throwing an instance of 'dmlc::Error'
+  what():  [09:36:46] src/engine/./threaded_engine.h:306: [09:36:46] src/storage/./pooled_storage_manager.h:79: cudaMalloc failed: out of memory
+An fatal error occurred in asynchronous engine operation. If you do not know what caused this error, you can try set environment variable MXNET_ENGINE_TYPE to NaiveEngine and run with debugger (i.e. gdb). This will force all operations to be synchronous and backtrace will give you the series of calls that lead to this error. Remember to set MXNET_ENGINE_TYPE back to empty after debugging.

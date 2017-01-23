@@ -1,0 +1,128 @@
+I tensorflow/stream_executor/dso_loader.cc:108] successfully opened CUDA library libcublas.so.7.5 locally
+I tensorflow/stream_executor/dso_loader.cc:108] successfully opened CUDA library libcudnn.so.5 locally
+I tensorflow/stream_executor/dso_loader.cc:108] successfully opened CUDA library libcufft.so.7.5 locally
+I tensorflow/stream_executor/dso_loader.cc:108] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:108] successfully opened CUDA library libcurand.so.7.5 locally
+I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:925] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+I tensorflow/core/common_runtime/gpu/gpu_init.cc:102] Found device 0 with properties: 
+name: GRID K520
+major: 3 minor: 0 memoryClockRate (GHz) 0.797
+pciBusID 0000:00:03.0
+Total memory: 4.00GiB
+Free memory: 3.95GiB
+I tensorflow/core/common_runtime/gpu/gpu_init.cc:126] DMA: 0 
+I tensorflow/core/common_runtime/gpu/gpu_init.cc:136] 0:   Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:838] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+W tensorflow/core/common_runtime/bfc_allocator.cc:213] Ran out of memory trying to allocate 2.52GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory is available.
+W tensorflow/core/common_runtime/bfc_allocator.cc:213] Ran out of memory trying to allocate 2.29GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory is available.
+W tensorflow/core/common_runtime/bfc_allocator.cc:213] Ran out of memory trying to allocate 2.19GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory is available.
+W tensorflow/core/common_runtime/bfc_allocator.cc:213] Ran out of memory trying to allocate 2.19GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory is available.
+W tensorflow/core/common_runtime/bfc_allocator.cc:213] Ran out of memory trying to allocate 2.20GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory is available.
+W tensorflow/core/common_runtime/bfc_allocator.cc:213] Ran out of memory trying to allocate 2.20GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory is available.
+W tensorflow/core/common_runtime/bfc_allocator.cc:213] Ran out of memory trying to allocate 2.20GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory is available.
+W tensorflow/core/common_runtime/bfc_allocator.cc:213] Ran out of memory trying to allocate 2.15GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory is available.
+W tensorflow/core/common_runtime/bfc_allocator.cc:213] Ran out of memory trying to allocate 2.20GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory is available.
+W tensorflow/core/common_runtime/bfc_allocator.cc:213] Ran out of memory trying to allocate 2.15GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory is available.
+Iteration: 0 train on batch time: 2288.014 ms.
+Iteration: 1 train on batch time: 2290.354 ms.
+Iteration: 2 train on batch time: 2289.724 ms.
+Iteration: 3 train on batch time: 2290.773 ms.
+Iteration: 4 train on batch time: 2290.362 ms.
+Iteration: 5 train on batch time: 2291.452 ms.
+Iteration: 6 train on batch time: 2288.561 ms.
+Iteration: 7 train on batch time: 2292.294 ms.
+Iteration: 8 train on batch time: 2290.141 ms.
+Iteration: 9 train on batch time: 2289.341 ms.
+Iteration: 10 train on batch time: 2289.933 ms.
+Iteration: 11 train on batch time: 2290.004 ms.
+Iteration: 12 train on batch time: 2288.960 ms.
+Iteration: 13 train on batch time: 2291.385 ms.
+Iteration: 14 train on batch time: 2289.223 ms.
+Iteration: 15 train on batch time: 2291.922 ms.
+Iteration: 16 train on batch time: 2290.300 ms.
+Iteration: 17 train on batch time: 2289.473 ms.
+Iteration: 18 train on batch time: 2290.086 ms.
+Iteration: 19 train on batch time: 2290.494 ms.
+Iteration: 20 train on batch time: 2291.832 ms.
+Iteration: 21 train on batch time: 2290.415 ms.
+Iteration: 22 train on batch time: 2289.739 ms.
+Iteration: 23 train on batch time: 2289.833 ms.
+Iteration: 24 train on batch time: 2289.924 ms.
+Iteration: 25 train on batch time: 2290.042 ms.
+Iteration: 26 train on batch time: 2290.865 ms.
+Iteration: 27 train on batch time: 2289.665 ms.
+Iteration: 28 train on batch time: 2291.388 ms.
+Iteration: 29 train on batch time: 2289.806 ms.
+Iteration: 30 train on batch time: 2290.459 ms.
+Iteration: 31 train on batch time: 2290.359 ms.
+Iteration: 32 train on batch time: 2290.220 ms.
+Iteration: 33 train on batch time: 2289.432 ms.
+Iteration: 34 train on batch time: 2289.253 ms.
+Iteration: 35 train on batch time: 2289.966 ms.
+Iteration: 36 train on batch time: 2290.815 ms.
+Iteration: 37 train on batch time: 2290.038 ms.
+Iteration: 38 train on batch time: 2289.975 ms.
+Iteration: 39 train on batch time: 2289.872 ms.
+Iteration: 40 train on batch time: 2290.819 ms.
+Iteration: 41 train on batch time: 2290.014 ms.
+Iteration: 42 train on batch time: 2290.018 ms.
+Iteration: 43 train on batch time: 2290.331 ms.
+Iteration: 44 train on batch time: 2291.564 ms.
+Iteration: 45 train on batch time: 2289.280 ms.
+Iteration: 46 train on batch time: 2290.379 ms.
+Iteration: 47 train on batch time: 2290.502 ms.
+Iteration: 48 train on batch time: 2291.871 ms.
+Iteration: 49 train on batch time: 2291.065 ms.
+Iteration: 50 train on batch time: 2289.859 ms.
+Iteration: 51 train on batch time: 2292.050 ms.
+Iteration: 52 train on batch time: 2290.174 ms.
+Iteration: 53 train on batch time: 2290.171 ms.
+Iteration: 54 train on batch time: 2291.706 ms.
+Iteration: 55 train on batch time: 2290.779 ms.
+Iteration: 56 train on batch time: 2290.103 ms.
+Iteration: 57 train on batch time: 2290.064 ms.
+Iteration: 58 train on batch time: 2291.862 ms.
+Iteration: 59 train on batch time: 2291.895 ms.
+Iteration: 60 train on batch time: 2291.257 ms.
+Iteration: 61 train on batch time: 2289.168 ms.
+Iteration: 62 train on batch time: 2288.342 ms.
+Iteration: 63 train on batch time: 2289.242 ms.
+Iteration: 64 train on batch time: 2289.082 ms.
+Iteration: 65 train on batch time: 2292.338 ms.
+Iteration: 66 train on batch time: 2292.939 ms.
+Iteration: 67 train on batch time: 2289.538 ms.
+Iteration: 68 train on batch time: 2291.592 ms.
+Iteration: 69 train on batch time: 2289.194 ms.
+Iteration: 70 train on batch time: 2291.248 ms.
+Iteration: 71 train on batch time: 2291.441 ms.
+Iteration: 72 train on batch time: 2290.788 ms.
+Iteration: 73 train on batch time: 2291.898 ms.
+Iteration: 74 train on batch time: 2290.556 ms.
+Iteration: 75 train on batch time: 2291.116 ms.
+Iteration: 76 train on batch time: 2291.694 ms.
+Iteration: 77 train on batch time: 2291.067 ms.
+Iteration: 78 train on batch time: 2291.529 ms.
+Iteration: 79 train on batch time: 2289.126 ms.
+Iteration: 80 train on batch time: 2291.065 ms.
+Iteration: 81 train on batch time: 2290.981 ms.
+Iteration: 82 train on batch time: 2291.545 ms.
+Iteration: 83 train on batch time: 2289.720 ms.
+Iteration: 84 train on batch time: 2291.157 ms.
+Iteration: 85 train on batch time: 2291.588 ms.
+Iteration: 86 train on batch time: 2292.701 ms.
+Iteration: 87 train on batch time: 2288.769 ms.
+Iteration: 88 train on batch time: 2289.381 ms.
+Iteration: 89 train on batch time: 2292.850 ms.
+Iteration: 90 train on batch time: 2289.262 ms.
+Iteration: 91 train on batch time: 2291.040 ms.
+Iteration: 92 train on batch time: 2291.041 ms.
+Iteration: 93 train on batch time: 2291.432 ms.
+Iteration: 94 train on batch time: 2290.171 ms.
+Iteration: 95 train on batch time: 2291.687 ms.
+Iteration: 96 train on batch time: 2289.717 ms.
+Iteration: 97 train on batch time: 2291.111 ms.
+Iteration: 98 train on batch time: 2290.549 ms.
+Iteration: 99 train on batch time: 2289.340 ms.
+Batch size: 16
+Iterations: 100
+Time per iteration: 2290.514 ms
