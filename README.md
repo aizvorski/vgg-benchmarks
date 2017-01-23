@@ -9,6 +9,7 @@ This mini-benchmark compares the speed of several deep learning frameworks on th
 All times in milliseconds per minibatch on a VGG16 network.  Minibatch size is 16. The time is for a complete SGD step including parameter updates, not just the forward+backward time.
 
 | Framework | [GTX 1080](results/gtx_1080/INFO.md) | [Maxwell Titan X](results/maxwell_titan_x/INFO.md) | [K80](results/k80/INFO.md) | [K520](results/k520/INFO.md) | 
+|:---|:---|:---|:---|:---|
 | Neon | 164.53 | 207.41 | N/A | N/A | 
 | Caffe | 244.44 | 311.06 | 787.81 | OOM | 
 | Keras (TensorFlow) | 287.69 | 360.75 | 1021.81 | OOM | 
@@ -19,7 +20,8 @@ All times in milliseconds per minibatch on a VGG16 network.  Minibatch size is 1
 | Torch (1) | 232.55 | 273.54 | N/A | N/A |
 
 N/A - test not ran
-OOM - test ran but failed due to running out of memory (several tests on the K520 with only 4GB memory)
+
+OOM - test ran but failed due to running out of memory (on the K520 with only 4GB memory)
 
 (1) The Torch benchmark is from https://github.com/jcjohnson/cnn-benchmarks (it is not included in this repo).
 
