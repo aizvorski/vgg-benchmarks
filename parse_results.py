@@ -46,8 +46,8 @@ def name_to_path(name):
 
 if __name__ == '__main__':
     benchmark_names = ('Neon', 'Caffe', 'Keras (TensorFlow)', 'Keras (Theano)',
-                       'Tensorflow', 'Tensorflow (slim)')
-    run_names = ('GTX 1080', 'Maxwell Titan X')
+                       'TensorFlow', 'TensorFlow (slim)', 'MXNet')
+    run_names = ('GTX 1080', 'Maxwell Titan X', 'K80', 'K520')
 
     line = "| Framework | "
     for run_name in run_names:
@@ -58,10 +58,14 @@ if __name__ == '__main__':
         line = "| " + name + " | "
         for run_name in run_names:
             result_path = name_to_path(run_name) + "/benchmark_" + name_to_path(name) + ".output"
-            if name == 'Caffe':
-                time_ = parse_output_caffe(result_path)
-            else:
-                time_ = parse_output(result_path)
-            line += "%.2f" % (time_)
+            try:
+                if name == 'Caffe':
+                    time_ = parse_output_caffe(result_path)
+                else:
+                    time_ = parse_output(result_path)
+                time_ = "%.2f" % (time_)
+            except:
+                time_ = "N/A"
+            line += time_
             line += " | "
         print line
