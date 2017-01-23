@@ -1,0 +1,12 @@
+- Hardware: AWS EC2 g2.2xlarge (half of NVIDIA K520)
+- OS: Deep Learning AMI for Amazon Linux, v1.5
+- CUDA: 7.5
+- CuDNN: 5.1
+- NVIDIA drivers: 352.99
+- Caffe: 1.0.0-rc3
+- Keras: 1.0.8
+- Theano: 0.8.2.dev-127aa70c6d34421ba7808b23d8bea506dc878068
+- TensorFlow: 0.10.0
+- Neon: N/A
+- MXNet: 0.7.0
+- Python: 2.7.12

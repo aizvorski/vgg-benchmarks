@@ -4,77 +4,37 @@ This mini-benchmark compares the speed of several deep learning frameworks on th
 
 *Contributions welcome!*
 
-## Results GTX 1080
+## Results
 
-The mini batch size is 16
+All times in milliseconds per minibatch on a VGG16 network.  Minibatch size is 16. The time is for a complete SGD step including parameter updates, not just the forward+backward time.
 
-| Framework  | Time (per minibatch)  |
-|:---|:---|
-| Neon  | 164.527 ms  |
-| Torch (1)  | 232.55 ms  |
-| Caffe (2)  | 244.445 ms  |
-| Keras (Tensorflow)  | 287.693 ms  |
-| Keras (Theano)  | 409.953 ms  |
+| Framework | [GTX 1080](results/gtx_1080/INFO.md) | [Maxwell Titan X](results/maxwell_titan_x/INFO.md) | [K80](results/k80/INFO.md) | [K520](results/k520/INFO.md) | 
+| Neon | 164.53 | 207.41 | N/A | N/A | 
+| Caffe | 244.44 | 311.06 | 787.81 | OOM | 
+| Keras (TensorFlow) | 287.69 | 360.75 | 1021.81 | OOM | 
+| Keras (Theano) | 409.95 | 317.30 | 1141.79 | 2445.22 | 
+| TensorFlow | N/A | 332.27 | 1057.12 | 2290.51 | 
+| TensorFlow (slim) | N/A | 370.89 | 1126.70 | 2488.51 | 
+| MXNet | N/A | 324.63 | 1247.47 | OOM | 
+| Torch (1) | 232.55 | 273.54 | N/A | N/A |
 
-The environment for the results listed above is as follows:
+N/A - test not ran
+OOM - test ran but failed due to running out of memory (several tests on the K520 with only 4GB memory)
 
-- Hardware: GTX 1080 (EVGA GTX 1080 Founders Edition)
-- CUDA: 8.0 (cuda-repo-ubuntu1404-8-0-rc_8.0.27-1_amd64.deb)
-- CuDNN: 5.0 (cudnn-8.0-linux-x64-v5.0-ga.tgz)
-- Caffe: df412ac (from source)
-- Keras: 1.0.7
-- Theano: 0.8.2
-- TensorFlow: 85f76f5 (from source)
-- Neon: 1.5.4 (485033c)
-- Python: 2.7.6
-- Ubuntu: 14.04.3 LTS
+(1) The Torch benchmark is from https://github.com/jcjohnson/cnn-benchmarks (it is not included in this repo).
 
-The TensorFlow version is *very* recent, it has to be in order for it to work with CUDA 8.0.
-
-(1) The Torch benchmark is from https://github.com/jcjohnson/cnn-benchmarks (it has an essentially identical setup, VGG-16, GTX 1080, CUDA 8, cuDNN 5, minibatch size 16).
-
-(2) The time is for a complete SGD step including parameter updates, not just the forward+backward time.
-
-## Results Maxwell Titan X
-
-The mini batch size is 16. As the speed changed with GPU heat, the fan speed was set to 100 % and the tests were all started with GPU temperature = 45 degrees.
-
-| Framework  | Time (per minibatch)  |
-|:---|:---|
-| Neon  | 207.406 ms  |
-| Torch (1) | 273.542 ms  |
-| Caffe (2)  | 311.061 ms |
-| Keras (Tensorflow)  | 360.753 ms  |
-| Keras (Theano)  | 317.298 ms  |
-| Tensorflow  | 332.27 ms  |
-| Tensorflow (slim) (3) | 370.89 ms  |
-| mxnet | 324.635 ms |
-
-(1) The code in https://github.com/jcjohnson/cnn-benchmarks was re-run with 100 iterations, 100 % GPU fan and starting temperature of 45.
-
-(2) The time is for a complete SGD step including parameter updates, not just the forward+backward time.
-
-(3) Uses the built-in slim training function, which has possibly more overhead.
-
-- Hardware: Titan X Maxwell
-- CUDA: 8.0 (cuda-repo-ubuntu1404-8-0-rc_8.0.27-1_amd64.deb)
-- CuDNN: 5.0 (cudnn-8.0-linux-x64-v5.0-ga.tgz)
-- Caffe: b2982c7 (from source)
-- Keras: 1.0.8
-- Theano: 0.9.0dev2.dev-338384adeabd2a56ccae22a9f1105a9f82ce9b8f
-- TensorFlow:  2a6d751 (from source)
-- Neon: 1.5.4 (485033c)
-- mxnet: (066373a) from source
-- Python: 2.7.6
-- Ubuntu: 14.04.3 LTS
 
 ## Running
 
-Caffe should be built inside caffe/ in the current directory (or a symlink)
 
-```bash
-run.sh
+```
+bash run.sh
 ```
 
 Note: this will back up and then restore your ~/.keras/keras.json
+
+Caffe should be built inside caffe/ in the current directory (or a symlink).
+
+Neon should be built anywhere and (just for the Neon test) the built Neon virtualenv should be activated.
+
 
