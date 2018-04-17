@@ -47,7 +47,7 @@ def name_to_path(name):
 if __name__ == '__main__':
     benchmark_names = ('Neon', 'Caffe', 'Keras (TensorFlow)', 'Keras (Theano)',
                        'TensorFlow', 'TensorFlow (slim)', 'MXNet')
-    run_names = ('GTX 1080', 'Maxwell Titan X', 'K80', 'K520')
+    run_names = ('V100', 'GTX 1080', 'Maxwell Titan X', 'K80', 'K520')
 
     line = "| Framework | "
     for run_name in run_names:
