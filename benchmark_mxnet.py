@@ -88,12 +88,11 @@ model = mx.model.FeedForward(
     initializer=mx.init.Xavier(factor_type="in", magnitude=2.34),
 )
 
-# A warmup run did not improve the benchmark.
-# As the first few epochs are significantly longer than the others,
-# we run over more epochs (400) to smooth them out
+model.fit(X=train_iter)
+print("Start")
 t0 = time.time()
 model.fit(X=train_iter)
 t1 = time.time()
-print "Batch size: %d" % (batch_size)
-print "Iterations: %d" % (nb_epoch)
-print "Time per iteration: %7.3f ms" % ((t1 - t0) * 1000 / nb_epoch)
+print("Batch size: %d" % (batch_size))
+print("Iterations: %d" % (nb_epoch))
+print("Time per iteration: %7.3f ms" % ((t1 - t0) * 1000 / nb_epoch))

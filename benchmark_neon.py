@@ -108,7 +108,7 @@ t0 = time.time()
 model.fit( train, cost=cost, optimizer=opt, num_epochs=100, callbacks=callbacks )
 t1 = time.time()
 
-print "Batch size: %d" %(NervanaObject.be.bsz)
-print "Iterations: %d" %(num_epochs)
-print "Time per iteration: %7.3f ms" %((t1 - t0) *1000 / num_epochs)
+print("Batch size: %d" %(NervanaObject.be.bsz))
+print("Iterations: %d" %(num_epochs))
+print("Time per iteration: %7.3f ms" %((t1 - t0) *1000 / num_epochs))
 

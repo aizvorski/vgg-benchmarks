@@ -56,9 +56,9 @@ def train_slim(batch_size, height, width, num_classes, learning_rate):
             save_interval_secs=6000)
         t1 = time.time()
 
-        print "Batch size: %d" % (batch_size)
-        print "Iterations: %d" % (n)
-        print "Time per iteration: %7.3f ms" % ((t1 - t0) * 1000 / n)
+        print("Batch size: %d" % (batch_size))
+        print("Iterations: %d" % (n))
+        print("Time per iteration: %7.3f ms" % ((t1 - t0) * 1000 / n))
 
 
 def train_pure_tf(batch_size, height, width, num_classes, learning_rate):
@@ -99,12 +99,12 @@ def train_pure_tf(batch_size, height, width, num_classes, learning_rate):
                 tstart = time.time()
                 sess.run([apply_gradient_op])
                 tend = time.time()
-                print "Iteration: %d train on batch time: %7.3f ms." % (i, (tend - tstart) * 1000)
+                print("Iteration: %d train on batch time: %7.3f ms." % (i, (tend - tstart) * 1000))
             t1 = time.time()
 
-        print "Batch size: %d" % (batch_size)
-        print "Iterations: %d" % (n)
-        print "Time per iteration: %7.3f ms" % ((t1 - t0) * 1000 / n)
+        print("Batch size: %d" % (batch_size))
+        print("Iterations: %d" % (n))
+        print("Time per iteration: %7.3f ms" % ((t1 - t0) * 1000 / n))
 
 
 if __name__ == '__main__':
@@ -123,4 +123,4 @@ if __name__ == '__main__':
     elif args.train_schedule == "pure_tf":
         train_pure_tf(args.batch_size, args.height, args.width, args.num_classes, args.learning_rate)
     else:
-        print "Train schedule must be slim or pure_tf"
+        print("Train schedule must be slim or pure_tf")
