@@ -1,6 +1,6 @@
 from datetime import datetime
 import numpy as np
-
+import re
 
 def parse_output(output_file):
     """ Utility to parse the output of keras, neon and tensorflow"""
@@ -12,6 +12,18 @@ def parse_output(output_file):
                 result = line.split(" ")[-2]
                 return float(result)
 
+
+def parse_output_per_iter(output_file):
+    """ Utility to parse the output of keras, neon and tensorflow"""
+    with open("./results/%s" % output_file, "r") as fh:
+        results = []
+        for line in fh:
+            m = re.search(r'train on batch time:\s*(\d+\.\d+) ms', line)
+            if m:
+                r = m.group(1)
+                results.append(float(r))
+        return np.mean(results[20:])
+        # return 0
 
 def parse_output_caffe(output_file):
     """ Utility to parse the output of caffe
@@ -48,11 +60,11 @@ if __name__ == '__main__':
     benchmark_names = ('Neon', 'Caffe', 'Keras (TensorFlow)', 'Keras (Theano)',
                        'TensorFlow', 'TensorFlow (slim)', 'MXNet')
     run_names = ('V100', 'GTX 1080', 'Maxwell Titan X', 'K80', 'K520')
-
+    
     line = "| Framework | "
     for run_name in run_names:
         line += run_name + " | "
-    print line
+    print(line)
 
     for name in benchmark_names:
         line = "| " + name + " | "
@@ -61,11 +73,14 @@ if __name__ == '__main__':
             try:
                 if name == 'Caffe':
                     time_ = parse_output_caffe(result_path)
+                elif name == 'TensorFlow' or name == 'Keras (TensorFlow)':
+                    time_ = parse_output_per_iter(result_path)
                 else:
                     time_ = parse_output(result_path)
                 time_ = "%.2f" % (time_)
-            except:
+            except Exception as e:
+                print(repr(e))
                 time_ = "N/A"
             line += time_
             line += " | "
-        print line
+        print(line)

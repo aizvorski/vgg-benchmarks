@@ -11,13 +11,14 @@ The table contains training times in milliseconds per minibatch on the same VGG1
 | Framework | [V100](results/v100/INFO.md) | [GTX 1080](results/gtx_1080/INFO.md) | [Maxwell Titan X](results/maxwell_titan_x/INFO.md) | [K80](results/k80/INFO.md) | [K520](results/k520/INFO.md) | 
 |:---|:---|:---|:---|:---|:---|
 | MXNet | 81.22 | N/A | 324.63 | 1247.47 | OOM | 
-| Neon | N/A | 164.53 | 207.41 | N/A | N/A | 
-| TensorFlow | 117.11 | N/A | 332.27 | 1057.12 | 2290.51 | 
+| TensorFlow | 88.03 | N/A | 332.15 | 1057.28 | 2290.58 | 
 | TensorFlow (slim) | 176.14 | N/A | 370.89 | 1126.70 | 2488.51 | 
-| Keras (TensorFlow) | 149.85 | 287.69 | 360.75 | 1021.81 | OOM | 
+| Keras (TensorFlow) | 101.82 | 287.85 | 359.89 | 1020.97 | OOM | 
 | Keras (Theano) | N/A | 409.95 | 317.30 | 1141.79 | 2445.22 | 
+| Neon | N/A | 164.53 | 207.41 | N/A | N/A | 
 | Caffe | N/A | 244.44 | 311.06 | 787.81 | OOM | 
 | Torch (1) | N/A | 232.55 | 273.54 | N/A | N/A |
+
 
 N/A - test not ran
 
