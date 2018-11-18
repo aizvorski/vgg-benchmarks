@@ -1,17 +1,24 @@
 import argparse
+import os
 import os.path
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--backend")
 args = parser.parse_args()
 
-with open(os.path.expanduser("~/.keras/keras.json"), "w") as fh:
-    if args.backend == "theano":
-        fh.write('{ "image_dim_ordering": "th", "epsilon": 1e-07, "floatx": "float32", "backend": "theano" }')
-    elif args.backend == "tensorflow":
-        fh.write('{ "image_dim_ordering": "tf", "epsilon": 1e-07, "floatx": "float32", "backend": "tensorflow" }')
-    else:
-        print("Backend must be theano or tensorflow")
+os.environ['KERAS_BACKEND'] = args.backend
+
+import tensorflow.python.keras.backend
+
+if args.backend == "theano":
+    tensorflow.python.keras.backend.set_image_dim_ordering("th")
+elif args.backend == "tensorflow":
+    tensorflow.python.keras.backend.set_image_dim_ordering("tf")
+else:
+    print("Backend must be theano or tensorflow")
+
+tensorflow.python.keras.backend.set_floatx('float32')
+tensorflow.python.keras.backend.set_epsilon(1e-07)
 
 import numpy as np
 import time
@@ -19,8 +26,6 @@ import sys
 import tensorflow
 # from tensorflow.keras.optimizers import SGD
 
-# vgg16.py from https://github.com/fchollet/deep-learning-models
-sys.path.append("deep-learning-models")
 from tensorflow.python.keras.applications.vgg16 import VGG16
 
 width = 224
